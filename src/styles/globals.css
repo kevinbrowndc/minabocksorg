@@ -13,10 +13,7 @@
         url('/images/noise.png');
 }
     .cursor-pointer sm:hidden
-    {
-      display: flex;
-      align-items: right;
-    }
+
     {
         background: #333;
         color: white;
