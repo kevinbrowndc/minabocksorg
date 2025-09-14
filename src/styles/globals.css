@@ -54,7 +54,7 @@
             @apply mb-0;
         }
     }
-    .nav 
+    .hidden peer 
     {
         background: #333;
         color: white;
