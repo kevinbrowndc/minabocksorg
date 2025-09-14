@@ -14,7 +14,8 @@
 }
     .cursor-pointer sm:hidden
     {
-        justify-content: right;
+      display: flex;
+      align-items: center;
     }
     {
         background: #333;
