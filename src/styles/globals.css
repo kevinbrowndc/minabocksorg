@@ -12,6 +12,36 @@
         ),
         url('/images/noise.png');
 }
+    .cursor-pointer sm:hidden
+    {
+        background: #333;
+        color: white;
+        padding: 10px;
+      }
+      nav label {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+      }
+      nav ul li {
+        padding: 10px;
+        border-top: 1px solid #444;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      #menu-toggle {
+        display: none;
+      }
+      #menu-toggle:checked + ul {
+        display: block;
+      }
 
 @layer base {
     h1 {
@@ -54,36 +84,7 @@
             @apply mb-0;
         }
     }
-    .cursor-pointer sm:hidden
-    {
-        background: #333;
-        color: white;
-        padding: 10px;
-      }
-      nav label {
-        font-size: 24px;
-        cursor: pointer;
-      }
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-      }
-      nav ul li {
-        padding: 10px;
-        border-top: 1px solid #444;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-      }
-      #menu-toggle {
-        display: none;
-      }
-      #menu-toggle:checked + ul {
-        display: block;
-      }
+
 
     .btn {
         @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
