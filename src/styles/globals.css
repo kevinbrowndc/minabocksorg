@@ -13,7 +13,7 @@
         url('/images/noise.png');
 }
 
- .ml-auto relative
+ .cursor-pointer text-2xl
     {
         background: #333;
         color: white;
