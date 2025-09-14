@@ -13,7 +13,7 @@
         url('/images/noise.png');
 }
 
- .hidden flex-col gap-y-2 peer-checked:flex sm:flex sm:flex-row sm:gap-x-4
+ .ml-auto relative
     {
         background: #333;
         color: white;
