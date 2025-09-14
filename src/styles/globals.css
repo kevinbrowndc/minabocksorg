@@ -13,7 +13,7 @@
         url('/images/noise.png');
 }
 
- #menu-toggle:checked + ul
+ .hidden peer
     {
         background: #333;
         color: white;
