@@ -13,7 +13,7 @@
         url('/images/noise.png');
 }
 
- .cursor-pointer sm:hidden
+ .ml-auto
     {
         background: #333;
         color: white;
