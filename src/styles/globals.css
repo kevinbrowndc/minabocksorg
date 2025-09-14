@@ -13,7 +13,7 @@
         url('/images/noise.png');
 }
 
- .cursor-pointer text-2xl
+ .menu-toggle:checked + ul
     {
         background: #333;
         color: white;
