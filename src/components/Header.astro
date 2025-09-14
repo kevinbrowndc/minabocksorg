@@ -1,3 +1,4 @@
+---
 import Logo from '../components/Logo.astro';
 
 const navItems = [
@@ -8,20 +9,23 @@ const navItems = [
   { href: '#', linkText: 'Link 5' },
 ];
 ---
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-  <a href="/">
+
+<nav class="flex items-center justify-between gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
+  <a href="/" class="flex-shrink-0">
     <Logo />
   </a>
 
-  <!-- Hamburger -->
-  <label for="menu-toggle" class="cursor-pointer sm:hidden">&#9776;</label>
-  <input type="checkbox" id="menu-toggle" class="hidden peer" />
+  <!-- Hamburger always on the right -->
+  <div class="ml-auto">
+    <label for="menu-toggle" class="cursor-pointer text-2xl">&#9776;</label>
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+  </div>
 
-  {!!navItems?.length && (
-    <ul class="flex flex-col sm:flex-row gap-x-4 gap-y-1 peer-checked:flex">
+  {navItems.length > 0 && (
+    <ul class="hidden flex-col gap-y-2 peer-checked:flex sm:flex sm:flex-row sm:gap-x-4">
       {navItems.map((item) => (
         <li>
-          <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2">
+          <a href={item.href} class="inline-block px-3 py-2">
             {item.linkText}
           </a>
         </li>
