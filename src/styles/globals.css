@@ -12,13 +12,12 @@
         ),
         url('/images/noise.png');
 }
-    .cursor-pointer sm:hidden
 
+ .cursor-pointer sm:hidden
     {
         background: #333;
         color: white;
         padding: 10px;
-        
       }
       nav label {
         font-size: 24px;
@@ -44,6 +43,7 @@
       #menu-toggle:checked + ul {
         display: block;
       }
+
 
 @layer base {
     h1 {
