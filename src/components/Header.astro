@@ -1,13 +1,56 @@
 ---
 import Logo from '../components/Logo.astro';
 
-const navItems = [
-    { linkText: 'Our team', href: '/' },
-    { linkText: 'Website Deisgn', href: '/revalidation' },
-    { linkText: 'SEO', href: '/image-cdn' },
-    { linkText: 'Digital Marketing', href: '/image-cdn' },
-    { linkText: 'Contact', href: '/blobs' }
-];
+const navItems =   <style>
+    body { font-family: sans-serif; margin: 0; }
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px;
+    }
+    nav label {
+      font-size: 24px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+    }
+    nav ul li {
+      padding: 10px;
+      border-top: 1px solid #444;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    #menu-toggle {
+      display: none;
+    }
+    #menu-toggle:checked + ul {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <!-- Hamburger icon -->
+  <label for="menu-toggle">&#9776;</label>
+  <input type="checkbox" id="menu-toggle" />
+
+  <!-- Menu links -->
+  <ul>
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li><a href="#">Link 4</a></li>
+    <li><a href="#">Link 5</a></li>
+  </ul>
+</nav>
 ---
 
 <nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
