@@ -14,10 +14,12 @@
 }
     .cursor-pointer sm:hidden
     {
+        justify-content: right;
+    }
+    {
         background: #333;
         color: white;
         padding: 10px;
-        justify-content: space-between;
         
       }
       nav label {
