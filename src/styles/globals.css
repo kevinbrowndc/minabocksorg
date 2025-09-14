@@ -38,10 +38,11 @@
         text-decoration: none;
       }
       #menu-toggle {
-        display: block;
+        display: none;
       }
       #menu-toggle:checked + ul {
         display: block;
+        justify-content: right;
       }
 
 
