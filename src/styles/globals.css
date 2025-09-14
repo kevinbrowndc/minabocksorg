@@ -54,7 +54,7 @@
             @apply mb-0;
         }
     }
-    .hidden peer 
+    .cursor-pointer sm:hidden
     {
         background: #333;
         color: white;
