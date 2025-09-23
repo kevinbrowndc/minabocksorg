@@ -34,12 +34,15 @@ Use the button below to invlidate a random tag out of this page's tags, then ref
 const exampleTag = tags[randomInt(0, tags.length - 1)];
 ---
 
-<Layout title="Revalidation">
+<Layout title="Contact Us">
     <h1 class="mb-10">Revalidating Server Content</h1>
     <Markdown content={explainer} class="mb-10" />
     <div class="flex flex-wrap gap-4">
-        <button class="revalidate-button btn" data-tag={exampleTag}>Invalidate tag: {exampleTag}</button>
-        <button class="btn" onclick="location.reload()">Reload page</button>
+        
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/kevinbrown-dc/30min" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
     </div>
 </Layout>
 
@@ -61,3 +64,4 @@ const exampleTag = tags[randomInt(0, tags.length - 1)];
         revalidate(tag);
     });
 </script>
+
