@@ -6,6 +6,20 @@ import { cacheHeaders, randomInt } from '../utils';
 
 export const prerender = false;
 
+const tags = ['/revalidation', 'cats-related', 'all-pets-related'];
+const headers = cacheHeaders(365, tags);
+
+Object.entries(headers).map(([k, v]) => {
+    Astro.response.headers.set(k, v);
+});
+
+const explainer = `
+This is a server-rendered page, last created at \`${new Date().toUTCString()}\` with a few extra response headers:
+
+~~~js
+${JSON.stringify(headers, null, 2)}
+~~~
+
 
 <Layout title="Contact Us">
     <h1 class="mb-10">Contact Us</h1>
@@ -15,6 +29,7 @@ export const prerender = false;
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
 </Layout>
+
 
 
 
