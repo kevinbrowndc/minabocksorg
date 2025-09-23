@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
-import { cacheHeaders, randomInt } from '../utils';
+
 
 export const prerender = false;
 
-const tags = ['/revalidation', 'cats-related', 'all-pets-related'];
+
 const headers = cacheHeaders(365, tags);
 
 const explainer = `
@@ -31,24 +31,7 @@ ${JSON.stringify(headers, null, 2)}
     </div>
 </Layout>
 
-<script>
-    function revalidate(tag: string) {
-        fetch('/api/revalidate', {
-            method: 'POST',
-            body: JSON.stringify({ tags: [tag] }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        alert(`Invalidated tag: ${tag}`);
-    }
 
-    const revalidateButton = document.querySelectorAll('button.revalidate-button')[0];
-    revalidateButton.addEventListener('click', (e) => {
-        const tag = (e.target as HTMLButtonElement).getAttribute('data-tag');
-        revalidate(tag);
-    });
-</script>
 
 
 
