@@ -6,8 +6,7 @@ import { cacheHeaders, randomInt } from '../utils';
 
 export const prerender = false;
 
-const tags = ['/revalidation', 'cats-related', 'all-pets-related'];
-const headers = cacheHeaders(365, tags);
+
 
 Object.entries(headers).map(([k, v]) => {
     Astro.response.headers.set(k, v);
@@ -24,4 +23,4 @@ Object.entries(headers).map(([k, v]) => {
 </Layout>
 
 
-</script>
+
