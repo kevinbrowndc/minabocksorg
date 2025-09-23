@@ -7,20 +7,15 @@ import { cacheHeaders, randomInt } from '../utils';
 export const prerender = false;
 
 
-
-Object.entries(headers).map(([k, v]) => {
-    Astro.response.headers.set(k, v);
-});
-
-
 <Layout title="Contact Us">
     <h1 class="mb-10">Contact Us</h1>
-    <Markdown content={explainer} class="mb-10" />
+
     <div class="flex flex-wrap gap-4">
         <div class="calendly-inline-widget" data-url="https://calendly.com/kevinbrown-dc/30min" style="min-width:320px;height:700px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
 </Layout>
+
 
 
 
