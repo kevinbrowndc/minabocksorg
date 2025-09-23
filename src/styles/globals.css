@@ -40,8 +40,7 @@
         display: none;
       }
       #menu-toggle:checked + ul {
-        display: block;
-        justify-content: right;
+        display: flex;
       }
 
 
