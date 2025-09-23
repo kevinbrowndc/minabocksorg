@@ -6,9 +6,10 @@ import Markdown from '../components/Markdown.astro';
 
 export const prerender = false;
 
-~~~js
-${JSON.stringify(headers, null, 2)}
-~~~
+Object.entries(headers).map(([k, v]) => {
+    Astro.response.headers.set(k, v);
+});
+
 
 const headers = cacheHeaders(365, tags);
 
@@ -33,6 +34,7 @@ ${JSON.stringify(headers, null, 2)}
         <!-- Calendly inline widget end -->
     </div>
 </Layout>
+
 
 
 
