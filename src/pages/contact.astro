@@ -1,26 +1,33 @@
+
 ---
 import Layout from '../layouts/Layout.astro';
 import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
-
+import { cacheHeaders, randomInt } from '../utils';
 
 export const prerender = false;
 
-
+const tags = ['/revalidation', 'cats-related', 'all-pets-related'];
 const headers = cacheHeaders(365, tags);
 
+Object.entries(headers).map(([k, v]) => {
+    Astro.response.headers.set(k, v);
+});
+
 const explainer = `
-Your journey begins here. Please select a date and time that works best for you and schedule a call with us. 
+This is a server-rendered page, last created at \`${new Date().toUTCString()}\` with a few extra response headers:
 
 ~~~js
 ${JSON.stringify(headers, null, 2)}
 ~~~
 
 `;
+
+const exampleTag = tags[randomInt(0, tags.length - 1)];
 ---
 
 <Layout title="Contact Us">
-    <h1 class="mb-10">Schedule a Call</h1>
+    <h1 class="mb-10">Revalidating Server Content</h1>
     <Markdown content={explainer} class="mb-10" />
     <div class="flex flex-wrap gap-4">
         
@@ -31,6 +38,23 @@ ${JSON.stringify(headers, null, 2)}
     </div>
 </Layout>
 
+<script>
+    function revalidate(tag: string) {
+        fetch('/api/revalidate', {
+            method: 'POST',
+            body: JSON.stringify({ tags: [tag] }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        alert(`Invalidated tag: ${tag}`);
+    }
 
+    const revalidateButton = document.querySelectorAll('button.revalidate-button')[0];
+    revalidateButton.addEventListener('click', (e) => {
+        const tag = (e.target as HTMLButtonElement).getAttribute('data-tag');
+        revalidate(tag);
+    });
+</script>
 
 
