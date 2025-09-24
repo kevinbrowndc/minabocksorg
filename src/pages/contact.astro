@@ -4,15 +4,7 @@ import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 
-
 export const prerender = false;
-
-const tags = ['/revalidation', 'cats-related', 'all-pets-related'];
-const headers = cacheHeaders(365, tags);export const prerender = false;
-
-Object.entries(headers).map(([k, v]) => {
-    Astro.response.headers.set(k, v);
-});
 
 
 const headers = cacheHeaders(365, tags);
@@ -38,13 +30,6 @@ ${JSON.stringify(headers, null, 2)}
         <!-- Calendly inline widget end -->
     </div>
 </Layout>
-
-
-
-
-
-
-
 
 
 
