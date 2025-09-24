@@ -7,7 +7,7 @@ import { cacheHeaders, randomInt } from '../utils';
 
 export const prerender = false;
 
-const tags = ['/revalidation', 'cats-related', 'all-pets-related'];
+const tags = [];
 const headers = cacheHeaders(365, tags);
 
 Object.entries(headers).map(([k, v]) => {
@@ -27,7 +27,8 @@ const exampleTag = tags[randomInt(0, tags.length - 1)];
 ---
 
 <Layout title="Contact Us">
-    <h1 class="mb-10">Revalidating Server Content</h1>
+    <h1 class="mb-10">Schedule a Meeting</h1>
+    <p>Your digital journey begins here. Pick a date and time that works best for you and schedule a meeting with one of our consultants today!</p>
 
     <div class="flex flex-wrap gap-4">
         
@@ -37,6 +38,7 @@ const exampleTag = tags[randomInt(0, tags.length - 1)];
         <!-- Calendly inline widget end -->
     </div>
 </Layout>
+
 
 
 
